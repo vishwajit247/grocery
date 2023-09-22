@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+    <script src="style1.js"></script>
+
+</head>
+
+<body>
+    <nav id="nav-top">
+        <div class="nav">
+            <div class="nav-left">
+                <div class="nav-all" onclick="navAll()"><i class="nav-all-i fa-solid fa-bars"></i></div>
+                <div style="background-color: #131921;" class="logo"><a href="index.html"><img src="logo.png" alt=""></a></div>
+            </div>
+            <div class="nav-right">
+                <div class="wishlist"><i onclick="wishlistAdded()" class="fa-regular fa-heart fa-xl"></i></div>
+                <div onclick="cartfun()" class="cart"><i class="fa-solid fa-cart-shopping fa-2xl"></i>
+                    <div>Cart</div>
+                </div>
+                <div onclick="userfun()" class="user">
+                    <div style="border: 1px solid black; padding: 5px 10px; border-radius: 50%;">
+                        <i class="fa-solid fa-user"></i>
+                    </div>
+                    <div>
+                        Hello <div id="userID">Signin</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="nav2">
+            <div style="margin-left: 20px;" class="groceries">Groceries
+                <div class="groceries-menu">
+                    <div>Fruits & Vegetables
+                        <div class="display-menu1"><div><img src="groceries1.jpg" alt=""></div></div>
+                    </div>
+                    <div>Dairy & Bakery
+                        <div class="display-menu1"><div><img src="groceries2.jpg" alt=""></div></div>
+                    </div>
+                    <div>Staples
+                        <div class="display-menu1"><div><img src="groceries3.jpeg" alt=""></div></div>
+                    </div>
+                    <div>Snacks & Branded Foods
+                        <div class="display-menu1"><div><img src="groceries4.jpeg" alt=""></div></div>
+                    </div>
+                    <div>Beverages
+                        <div class="display-menu1"><div><img src="groceries5.jpeg" alt=""></div></div>
+                    </div>
+                    <div>Personal Care
+                        <div class="display-menu1"><div><img src="groceries2.jpg" alt=""></div></div>
+                    </div>
+                    <div>Home Care
+                        <div class="display-menu1"><div><img src="groceries1.jpg" alt=""></div></div>
+                    </div>
+                    <div>Apparel
+                        <div class="display-menu1"><div><img src="groceries4.jpeg" alt=""></div></div>
+                    </div>
+                    <div>Home & Kitchen
+                        <div class="display-menu1"><div><img src="groceries3.jpeg" alt=""></div></div>
+                    </div>
+                    <div>Mom & Baby Care
+                        <div class="display-menu1"><div><img src="groceries2.jpg" alt=""></div></div>
+                    </div>
+                    <div>Books
+                        <div class="display-menu1"><div><img src="groceries1.jpg" alt=""></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="fruits">Premium Fruits
+                <div class="fruits-menu">
+                    <div>Apples & Pears
+                        <div class="display-menu1"><div><img src="fruits1.jpeg" alt=""></div></div>
+                    </div>
+                    <div>Avocado, Peach, Plum
+                        <div class="display-menu1"><div><img src="fruits2.jpeg" alt=""></div></div>
+                    </div>
+                    <div>Banana, Melons & Coconut
+                        <div class="display-menu1"><div><img src="fruits3.jpeg" alt=""></div></div>
+                    </div>
+                    <div>Cherries, Berries & Exotic Fruits
+                        <div class="display-menu1"><div><img src="fruits4.jpeg" alt=""></div></div></div>
+                    <div>Citrus, Mango & Grapes
+                        <div class="display-menu1"><div><img src="fruits5.jpeg" alt=""></div></div>
+                    </div>
+                    <div>Dates
+                        <div class="display-menu1"><div><img src="fruits4.jpeg" alt=""></div></div>
+                    </div>
+                    <div>Gift, Assorted & XL Packs
+                        <div class="display-menu1"><div><img src="fruits3.jpeg" alt=""></div></div>
+                    </div>
+                    <div>Pomegranate, Papaya & Pineapple
+                        <div class="display-menu1"><div><img src="fruits2.jpeg" alt=""></div></div>
+                    </div>
+                    <div>Seasonal & Minor Fruits
+                        <div class="display-menu1"><div><img src="fruits1.jpeg" alt=""></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="kitchen">Home & Kitchen
+                <div class="kitchen-menu">
+                    <div>Bathroom & Laundry Accessories
+                        <div class="display-menu1"><div><img src="home1.jpeg" alt=""></div></div>
+                    </div>
+                    <div>Disposables
+                        <div class="display-menu1"><div><img src="home2.jpeg" alt=""></div></div>
+                    </div>
+                    <div>Furnishing
+                        <div class="display-menu1"><div><img src="home3.jpeg" alt=""></div></div>
+                    </div>
+                    <div>Furniture
+                        <div class="display-menu1"><div><img src="home4.jpeg" alt=""></div></div>
+                    </div>
+                    <div>Garden & Outdoor
+                        <div class="display-menu1"><div><img src="home5.jpeg" alt=""></div></div>
+                    </div>
+                    <div>Home Decor
+                        <div class="display-menu1"><div><img src="home4.jpeg" alt=""></div></div>
+                    </div>
+                    <div>Kitchenware
+                        <div class="display-menu1"><div><img src="home3.jpeg" alt=""></div></div>
+                    </div>
+                    <div>Prayer & Spiritual Needs
+                        <div class="display-menu1"><div><img src="home2.jpeg" alt=""></div></div>
+                    </div>
+                    <div>Tableware
+                        <div class="display-menu1"><div><img src="home1.jpeg" alt=""></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="fashion">Fashion
+                <div class="fashion-menu">
+                    <div>Men
+                        <div class="display-menu1"><div><img src="fashion1.jpeg" alt=""></div></div>
+                    </div>
+                    <div>Women
+                        <div class="display-menu1"><div><img src="fashion2.jpeg" alt=""></div></div>
+                    </div>
+                    <div>Boys
+                        <div class="display-menu1"><div><img src="fashion3.jpeg" alt=""></div></div>
+                    </div>
+                    <div>Girls
+                        <div class="display-menu1"><div><img src="fashion4.jpeg" alt=""></div></div>
+                    </div>
+                    <div>Toys & Baby Care
+                        <div class="display-menu1"><div><img src="fashion5.jpeg" alt=""></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="electronics">Electronics
+                <div class="electronics-menu">
+                    <div>Mobiles & Tablets
+                        <div class="display-menu1"><div><img src="electronics1.jpeg" alt=""></div></div>
+                    </div>
+                    <div>TV & Speakers
+                        <div class="display-menu1"><div><img src="electronics2.jpeg" alt=""></div></div>
+                    </div>
+                    <div>Home Appliances
+                        <div class="display-menu1"><div><img src="electronics3.jpeg" alt=""></div></div>
+                    </div>
+                    <div>Computers
+                        <div class="display-menu1"><div><img src="electronics4.jpeg" alt=""></div></div>
+                    </div>
+                    <div>Cameras
+                        <div class="display-menu1"><div><img src="electronics5.jpeg" alt=""></div></div>
+                    </div>
+                    <div>Kitchen Appliances
+                        <div class="display-menu1"><div><img src="electronics1.jpeg" alt=""></div></div>
+                    </div>
+                    <div>Personal Care & Grooming
+                        <div class="display-menu1"><div><img src="electronics2.jpeg" alt=""></div></div>
+                    </div>
+                    <div>Smart Devices
+                        <div class="display-menu1"><div><img src="electronics4.jpeg" alt=""></div></div>
+                    </div>
+                    <div>Gaming
+                        <div class="display-menu1"><div><img src="electronics3.jpeg" alt=""></div></div>
+                    </div>
+                    <div>Accessories
+                        <div class="display-menu1"><div><img src="electronics2.jpeg" alt=""></div></div>
+                    </div>
+                    <div>Smart Watch Accessories
+                        <div class="display-menu1"><div><img src="electronics1.jpeg" alt=""></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="beauty">Beauty
+                <div class="beauty-menu">
+                    <div>Make-Up
+                        <div class="display-menu1"><div><img src="beauty1.jpeg" alt=""></div></div>
+                    </div>
+                    <div>Hair
+                        <div class="display-menu1"><div><img src="beauty2.jpeg" alt=""></div></div>
+                    </div>
+                    <div>Skin Care
+                        <div class="display-menu1"><div><img src="beauty3.jpeg" alt=""></div></div>
+                    </div>
+                    <div>Fragnances
+                        <div class="display-menu1"><div><img src="beauty4.jpeg" alt=""></div></div>
+                    </div>
+                    <div>Personal Care
+                        <div class="display-menu1"><div><img src="beauty3.jpeg" alt=""></div></div>
+                    </div>
+                    <div>Mom & Baby
+                        <div class="display-menu1"><div><img src="beauty2.jpeg" alt=""></div></div>
+                    </div>
+                    <div>Men's Grooming
+                        <div class="display-menu1"><div><img src="beauty1.jpeg" alt=""></div></div>
+                    </div>
+                    <div>Tools & Appliances
+                        <div class="display-menu1"><div><img src="beauty4.jpeg" alt=""></div></div>
+                    </div>
+                    <div>Wellness
+                        <div class="display-menu1"><div><img src="beauty3.jpeg" alt=""></div></div>
+                    </div>
+                    <div>Fitness
+                        <div class="display-menu1"><div><img src="beauty2.jpeg" alt=""></div></div>
+                    </div>
+                    <div>Ayush
+                        <div class="display-menu1"><div><img src="beauty1.jpeg" alt=""></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="jewellery">Jewellery
+                <div class="jewellery-menu">
+                    <div>Fine Jewellery
+                        <div class="display-menu1"><div><img src="jewellery1.jpeg" alt=""></div></div>
+                    </div>
+                    <div>Jewellery
+                        <div class="display-menu1"><div><img src="jewellery2.jpeg" alt=""></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="improvement">Home Improvement
+                <div class="improvement-menu">
+                    <div>Auto Care
+                        <div class="display-menu2"><div><img src="home11.jpeg" alt=""></div></div>
+                    </div>
+                    <div>Building Supplies & Measuring Tools
+                        <div class="display-menu2"><div><img src="home12.jpeg" alt=""></div></div>
+                    </div>
+                    <div>Carpentry
+                        <div class="display-menu2"><div><img src="home11.jpeg" alt=""></div></div>
+                    </div>
+                    <div>Electrical
+                        <div class="display-menu2"><div><img src="home12.jpeg" alt=""></div></div>
+                    </div>
+                    <div>Hardware & Plumbing
+                        <div class="display-menu2"><div><img src="home11.jpeg" alt=""></div></div>
+                    </div>
+                    <div>Home Cleaning & Organisation
+                        <div class="display-menu2"><div><img src="home12.jpeg" alt=""></div></div>
+                    </div>
+                    <div>Industrial & Scientific Supplies
+                        <div class="display-menu2"><div><img src="home11.jpeg" alt=""></div></div>
+                    </div>
+                    <div>Home Safety & Automation
+                        <div class="display-menu2"><div><img src="home12.jpeg" alt=""></div></div>
+                    </div>
+                    <div>Kitchen & Bath Fixtures
+                        <div class="display-menu2"><div><img src="home11.jpeg" alt=""></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="toys">Sports & Toys
+                <div class="toys-menu">
+                    <div>Toys
+                        <div class="display-menu2"><div><img src="sports1.jpeg" alt=""></div></div>
+                    </div>
+                    <div>Games
+                        <div class="display-menu2"><div><img src="sports2.jpeg" alt=""></div></div>
+                    </div>
+                    <div>Sporting Goods & Fitness Equipments
+                        <div class="display-menu2"><div><img src="sports3.jpeg" alt=""></div></div>
+                    </div>
+                </div>
+            </div>
+            <div style="margin-right: 20px;" class="bags">Bags & Luggages
+                <div class="bags-menu">
+                    <div>Back Bags
+                        <div class="display-menu2"><div><img src="bags1.jpeg" alt=""></div></div>
+                    </div>
+                    <div>Duffle Bags
+                        <div class="display-menu2"><div><img src="bags2.jpeg" alt=""></div></div>
+                    </div>
+                    <div>Trolley
+                        <div class="display-menu2"><div><img src="bags3.jpeg" alt=""></div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ------------------------------------------------------ -->
+    <section>
+        <div class="layer">
+            <div class="con">
+                <h2 style="color: white;">Login / Signup</h2>
+                <div class="wrong">Wrong Credentials
+                    <div>Try again!!</div>
+                </div>
+                <div class="a1 b1"><input id="logintxt" class="c1" type="text" placeholder="User id"></div>
+                <div class="a1 b1"><input id="loginpwd" class="c1" type="password" placeholder="Password"></div>
+                <div class="a2 b1"><button id="sub" onclick="funlogin()" class="c1 c2">Login</button></div>
+                <div class="a2 b1"><button id="cre" onclick="funcreate()" class="c1 c2">Create Account</button></div>
+            </div>
+        </div>
+    </section>
+    <!-- --------------------------------------------------------- -->
+    <section>
+        <div class="nav2allmain">
+        <div class="nav2all">
+            <div class="nav2all-hello"><i class="nav2all-admin fa-solid fa-user"></i>Hello,sign in</div>
+            <p><i class="fa-solid fa-house"></i><span>Home</span></p>
+            <hr>
+            <p><i class="fa-brands fa-shopify"></i><span>Shop By Category</span></p>
+            <hr>
+            <h4>My Account</h4>
+            <p><i class="fa-solid fa-cube"></i><span>My Orders</span></p>
+            <hr>
+            <p><i class="fa-solid fa-list"></i><span>My List</span></p>
+            <hr>
+            <p><i class="fa-solid fa-heart"></i><span>Wishlist</span></p>
+            <hr>
+            <p><i class="fa-solid fa-wallet"></i><span>My Wallet</span></p>
+            <hr>
+            <h4>Offers & More</h4>
+            <p><i class="fa-solid fa-percent"></i><span>Offer Store</span></p>
+            <hr>
+            <p><i class="fa-solid fa-medal"></i><span>Coupon Store</span></p>
+            <hr>
+            <p><i class="fa-solid fa-gift"></i><span>Gift Store</span></p>
+            <hr>
+            <p><i class="fa-regular fa-credit-card"></i><span>JioMart Gift Card</span></p>
+            <hr>
+            <h4>Help & Support</h4>
+            <p><i class="fa-solid fa-circle-question"></i><span>FAQs/Need Help</span></p>
+            <hr>
+            <p><i class="fa-solid fa-users"></i><span>About Us</span></p>
+            <hr>
+            <p><i class="fa-solid fa-phone"></i><span>Contact Us</span></p>
+            <hr>
+            <p><i class="fa-solid fa-bag-shopping"></i><span>Guide</span></p>
+            <hr>
+            <p><i class="fa-solid fa-circle-info"></i><span>Caution Notice</span></p>
+            <hr>
+        </div>
+        <div class="nav2allblank" onclick="navAllClose()"><i style="cursor: pointer; color: rgba(0, 0, 0, 0.7); position: relative; left: 23%; top: 15px;" class="fa-solid fa-x fa-xl"></i></div>
+    </div>
+    </section>
+    <!-- --------------------------------------------------------- -->
+
+    <main>
+        <section class="maincon">
+            <img class="bgimg" src="1.jpg" alt="">
+            <i class="left fa-solid fa-less-than" onclick="fun3()"></i>
+            <i class="right fa-solid fa-greater-than" onclick="fun4()"></i>
+        </section>
+
+        <!-- ========== -->
+        <div id="cont"></div>
+        <!-- ========== -->
+
+        
+    </main>
+    <!-- --------------------------------------------------------- -->
+
+    <!-- --------------------------------------------------------- -->
+
+    <footer>
+        <nav class="footer1">
+            <a href="#nav-top">Back to top</a>
+        </nav>
+        <nav class="footer2">
+            <div class="footer2-body">
+                <div class="footer2body-in">
+                    <h4>Get to Know Us</h4>
+                    <p>About Us</p>
+                    <p>Careers</p>
+                    <p>Press Releases</p>
+                </div>
+                <div class="footer2body-in">
+                    <h4>Connect with Us</h4>
+                    <p>Facebook</p>
+                    <p>Twitter</p>
+                    <p>Instagram</p>
+                </div>
+                <div class="footer2body-in">
+                    <h4>Make Money with Us</h4>
+                    <p>Sell with Us</p>
+                    <p>Protect and Build Your Brand</p>
+                    <p>Protect Global Selling</p>
+                    <p>Become an Affiliate</p>
+                    <p>Fulfilment by Us</p>
+                    <p>Advertise Your Products</p>
+                    <p>Pay on Merchants</p>
+                </div>
+                <div class="footer2body-in">
+                    <h4>Let Us Help You</h4>
+                    <p>Your Account</p>
+                    <p>Returns Centre</p>
+                    <p>100% Purchase Protection</p>
+                    <p>App Download</p>
+                    <p>Help</p>
+                </div>
+            </div>
+            <div class="footer2-bottom">
+                <div class="footer-bottom-top">
+                    <div class="footer2-logo"><img src="logo.png" alt=""></div>
+                    <input type="number" placeholder="English">
+                </div>
+                <div class="footer-bottom-down">
+                    <div>
+                        <p>Australia</p>
+                        <p>Brazil</p>
+                        <p>Canada</p>
+                        <p>China</p>
+                        <p>France</p>
+                        <p>Germany</p>
+                        <p>Italy</p>
+                        <p>Japan</p>
+                        <p>Mexico</p>
+                        <p>Netherlands</p>
+                        <p>Poland</p>
+                        <p>Singapore</p>
+                        <p>Spain</p>
+                        <p>Turkey</p>
+                        <p>United Arab Emirates</p>
+                    </div>
+                    <div>
+                        <p>United Kingdom</p>
+                        <p>United States</p>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <nav class="footer3">
+            <div class="footer3-top">
+                <div class="footer3-top-items">
+                    <div>
+                        <h5>AbeBooks</h5>
+                        <p>Books, art</p>
+                        <p>& collectibles</p>
+                    </div>
+                    <div>
+                        <h5>Shopbop</h5>
+                        <p>Designer</p>
+                        <p>Fashion Brands</p>
+                    </div>
+                </div>
+                <div class="footer3-top-items">
+                    <div>
+                        <h5>Web Services</h5>
+                        <p>Scalable Cloud</p>
+                        <p>Computing Services</p>
+                    </div>
+                    <div>
+                        <h5>Our Business</h5>
+                        <p>Everything For</p>
+                        <p>Your Business</p>
+                    </div>
+                </div>
+                <div class="footer3-top-items">
+                    <div>
+                        <h5>Audible</h5>
+                        <p>Download</p>
+                        <p>Audio Books</p>
+                    </div>
+                    <div>
+                        <h5>Prime Now</h5>
+                        <p>2-Hour Delivery</p>
+                        <p>on Everyday Items</p>
+                    </div>
+                </div>
+                <div class="footer3-top-items">
+                    <div>
+                        <h5>DP Review</h5>
+                        <p>Digital</p>
+                        <p>Photography</p>
+                    </div>
+                    <div>
+                        <h5>Music</h5>
+                        <p>100 million songs, ad-free</p>
+                        <p>Over 15 million podcast episodes</p>
+                    </div>
+                </div>
+                <div class="footer3-top-items">
+                    <div>
+                        <h5>IMDB</h5>
+                        <p>Movies, TV</p>
+                        <p>& Celebrities</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer3-bottom">
+                <div class="footer3-bottom-items">
+                    <div>
+                        <h5>Cobditions of Use & Sale</h5>
+                        <h5>Privacy Notice</h5>
+                        <h5>Interest-Based Ads</h5>
+                    </div>
+                    <div>
+                        <h5>&copy; 1996-2023, Inc. or its affiliates</h5>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </footer>
+    <!-- --------------------------------------------------------- -->
+
+
+
+
+    <script>
+        let wrongg = document.getElementsByClassName("wrong")[0]
+        let userData=JSON.parse(localStorage.getItem("userLoc"))
+        if(userData==null){
+            userData=[]
+        }
+        function funlogin() {
+            let uid=document.getElementById("logintxt")
+            let pwd=document.getElementById("loginpwd")
+            for(let i=0;i<userData.length;i++){
+                if(userData[i].uid==uid.value && userData[i].pwd==pwd.value){
+                    document.getElementsByClassName("layer")[0].style.display = "none"
+                    document.getElementById("userID").innerHTML = userData[i].uid
+                    document.getElementById("userID").style.color="#0078ad"
+                    return ("")
+                }
+            }
+            wrongg.innerHTML="Wrong Credentials<div>Try again!!</div>"
+            wrongg.style.backgroundColor = "rgb(146, 24, 24)"
+            wrongg.style.display = "block"
+        }
+
+        function funcreate(){
+            let uid=document.getElementById('logintxt');
+            let pwd=document.getElementById('loginpwd');
+            for(let i=0;i<userData.length;i++){
+                if(userData[i].uid == uid.value ){
+                    wrongg.innerHTML="Data Already exists<div>Try again!!</div>"
+                    wrongg.style.backgroundColor = "rgb(0, 255, 200)"
+                    wrongg.style.display = "block"
+                    return ("")
+                } 
+            }
+        userData.push({"uid":logintxt.value,"pwd":loginpwd.value})
+        localStorage.setItem( 'userLoc', JSON.stringify(userData))
+        wrongg.innerHTML="Account Created<div>Successfully...</div>"
+        wrongg.style.display = "block"
+        wrongg.style.backgroundColor = "#0078ad"
+        }
+
+
+        let layerdisp = () => {
+            document.getElementsByClassName("layer")[0].style.display = "block"
+        }
+        setTimeout(layerdisp,2000)
+
+        // -------------------------------------------
+        function cartfun(){
+            alert("Cart Empty")
+        }
+        function userfun(){
+            alert("Hello "+document.getElementById("userID").innerHTML)
+        }
+        // -------------------------------------------
+        
+        let div1=document.getElementsByClassName('nav2all')[0]
+        let div2=document.getElementsByClassName('nav2allblank')[0]
+        leftt=-100
+        function navAll(){
+            document.getElementsByClassName("nav2allmain")[0].style.display="flex"
+            div1.style.display='flex';
+            id= setInterval(openCon,0.1)              
+        }
+        function openCon(){
+            if(leftt>=0){
+                clearInterval(id);
+                return
+            }
+            leftt+=5
+            div1.style.left=leftt+'%'
+        }
+        function navAllClose(){
+            document.getElementsByClassName("nav2allmain")[0].style.display="none"
+            div1.style.left=-100+"%"
+            leftt=-100
+        }
+
+        // -------------------------------------------
+        let bgref=["1.jpg","2.jpg","3.jpg","4.jpg","5.jpg","6.jpg","7.jpg","8.jpg","9.jpg","10.jpg"]
+        let iref=0
+        function fun3(){
+            iref--
+            if(iref<0){
+                iref=(bgref.length-1)
+            }
+            document.getElementsByClassName("bgimg")[0].src=bgref[iref]
+        }
+        function fun4(){
+            iref++
+            if(iref>(bgref.length-1)){
+                iref=0
+            }
+            document.getElementsByClassName("bgimg")[0].src=bgref[iref]
+        }
+        setInterval(fun4,5000)
+
+        // ---------------------------------------
+
+        function itemwish(e){
+            let clist=e.classList
+            if(clist.contains("fa-regular")){
+                clist.remove("fa-regular")
+                clist.add("fa-solid")
+                e.style.backgroundColor="red"
+            }
+            else{
+                clist.remove("fa-solid")
+                clist.add("fa-regular")
+                e.style.backgroundColor=""
+            }
+        }
+
+
+
+        // ===============
+        let wl= JSON.parse(localStorage.getItem("wl")) || []
+        let products=[]
+        let cont=document.getElementById("cont")
+            fetch('https://fakestoreapi.com/products')
+            .then(res=>res.json())
+            .then(json=>{products=json;displayPro(json)})
+
+        function displayPro(data){
+            data.map((item,ind)=>{
+                cont.innerHTML+=`<div class="getdata-con"><i onclick="itemwish(this); itemadd(${ind})" class="item-wishlist item-cart fa-regular fa-heart fa-2xl"></i> <div class="getdata"><img src=${item.image} /></div>${item.title}</div>`
+            })
+        }
+        function itemadd(id){
+            wl.push(products[id])
+            localStorage.setItem("wl",JSON.stringify(wl))
+        }
+        function wishlistAdded(id){
+            localStorage.setItem("pid",id)
+            location.href="wishlist.html"
+        }
+        // ===============
+
+    </script>
+</body>
+
+</html>

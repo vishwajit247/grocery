@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            outline: 0px;
+            box-sizing: border-box;
+        }
+
+        .nav {
+            width: 100%;
+            height: 8vh;
+            background-color: #131921;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 150px;
+            padding: 0px 20px;
+            position: relative;
+        }
+
+        .nav-left {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            height: 75%;
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            height: 75%;
+            gap: 50px;
+        }
+
+        .nav-left>div {
+            height: 100%;
+            padding: 0px 8px;
+        }
+
+        .nav-right>div {
+            height: 100%;
+            padding: 0px 8px;
+        }
+
+        .nav-left .logo {
+            width: 120px;
+            height: 100%;
+        }
+
+        .logo img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .user {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .cart,
+        .wishlist {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .nav-all {
+            display: flex;
+            align-items: center;
+            border-radius: 50%;
+        }
+
+        .nav-all-i {
+            padding: 0px 6px;
+        }
+
+        .nav-left>div:hover {
+            border: 1px solid rgb(255, 255, 255);
+        }
+
+        .nav-right>div:hover {
+            border: 1px solid rgb(255, 255, 255);
+        }
+
+        /* ----------------------------------------------------- */
+
+        .layer {
+            width: 100%;
+            height: 100vh;
+            position: absolute;
+            top: 0px;
+            background-color: rgba(255, 255, 255, 0.5);
+            display: none;
+        }
+
+        .layer .con {
+            width: 400px;
+            height: 400px;
+            margin: 200px auto;
+            padding-top: 1px;
+            background-color: rgb(214, 206, 206);
+            background-repeat: no-repeat;
+            background-size: cover;
+            text-align: center;
+            position: relative;
+        }
+
+        .layer h2 {
+            margin: 40px auto 40px;
+        }
+
+        .layer .c1 {
+            text-align: center;
+            width: 250px;
+            height: 30px;
+            border-radius: 18px;
+            margin-bottom: 15px;
+            background-color: transparent;
+            border: 1px solid #145253;
+            font-weight: 600;
+        }
+
+        .layer .c2 {
+            width: 260px;
+            height: 32px;
+            margin-top: 30px;
+            margin-bottom: 30px;
+            color: rgb(0, 69, 61);
+            font-weight: bold;
+            background-color: #82c7c8;
+            border: 0px;
+        }
+
+        .layer input {
+            color: rgb(11, 154, 137);
+            font-weight: bold;
+        }
+
+        .layer .wrong {
+            padding: 5px;
+            background-color: rgb(146, 24, 24);
+            color: black;
+            display: none;
+            position: absolute;
+            top: 30px;
+            left: 140px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        /* ----------------------------------------------------- */
+        .nav2 {
+            width: 100%;
+            height: 6vh;
+            background-color: rgb(16, 18, 25);
+            color: white;
+            padding: 0px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav2>div {
+            height: 75%;
+            padding: 0px 10px;
+            display: flex;
+            align-items: center;
+        }
+        .nav2>div:hover{
+            border: 1px solid white;
+        }
+
+        /* ----------------------------------------------------- */
+        .nav2all-admin {
+            border: 1px solid white;
+            border-radius: 50%;
+            padding: 2px 4px;
+            margin-right: 8px;
+            background-color: white;
+            color: #131921;
+        }
+
+        .nav2all-hello {
+            width: 100%;
+            padding: 7px 0px;
+            background-color: #131921;
+            padding-left: 20px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            font-size: 18px;
+            color: white;
+        }
+
+        .nav2all p,
+        .nav2all h4 {
+            padding-left: 20px;
+            color: black;
+        }
+
+        .nav2all hr {
+            border: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .nav2all {
+            width: 0%;
+            height: 100vh;
+            background-color: rgb(225, 225, 225);
+            display: none;
+            flex-direction: column;
+            gap: 15px;
+            overflow-y: scroll;
+            position: relative;
+        }
+        .nav2allblank{
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.5);
+            display: none;
+            position: relative;
+        }
+        .nav2allmain{
+            position: absolute;
+            top: 0px;
+            width: 100%;
+            height: 100vh;
+            display: none;
+        }
+
+        /* ----------------------------------------------------- */
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div class="nav">
+            <div class="nav-left">
+                <div class="nav-all" onclick="navAll()"><i class="nav-all-i fa-solid fa-bars"></i></div>
+                <div class="logo"><img src="logo.png" alt=""></div>
+            </div>
+            <div class="nav-right">
+                <div class="wishlist"><i class="fa-regular fa-heart fa-xl"></i></div>
+                <div class="cart"><i class="fa-solid fa-cart-shopping fa-2xl"></i>
+                    <div>Cart</div>
+                </div>
+                <div class="user">
+                    <div style="border: 1px solid black; padding: 5px 10px; border-radius: 50%;">
+                        <i class="fa-solid fa-user"></i>
+                    </div>
+                    <div>
+                        Hello <div id="userID">Signin</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="nav2">
+            <div>Groceries</div>
+            <div>Premium Fruits</div>
+            <div>Home & Kitchen</div>
+            <div>Fashion</div>
+            <div>Electronics</div>
+            <div>Beauty</div>
+            <div>Jewellery</div>
+            <div>Home Improvement</div>
+            <div>Toys</div>
+            <div>Bags % Luggages</div>
+        </div>
+    </nav>
+    <!-- ------------------------------------------------------ -->
+    <section>
+        <div class="layer">
+            <div class="con">
+                <h2 style="color: white;">Login</h2>
+                <div class="wrong">Wrong Credentials
+                    <div>Try again!!</div>
+                </div>
+                <div class="a1 b1"><input id="tx" class="c1" type="text" placeholder="User id"></div>
+                <div class="a1 b1"><input id="pw" class="c1" type="password" placeholder="Password"></div>
+                <div class="a2 b1"><button id="sub" onclick="fun1()" class="c1 c2">Login</button></div>
+                <div class="a2 b1"><button class="c1 c2">Create Account</button></div>
+            </div>
+        </div>
+    </section>
+    <!-- --------------------------------------------------------- -->
+    <section>
+        <div class="nav2allmain">
+        <div class="nav2all">
+            <div class="nav2all-hello"><i class="nav2all-admin fa-solid fa-user"></i>Hello,sign in</div>
+            <h4>Trending</h4>
+            <p>Best Sellers</p>
+            <p>New Releases</p>
+            <p>Movers and Shakers</p>
+            <hr>
+            <h4>Digital Content and Devices</h4>
+            <p>Echo & ALexa</p>
+            <p>Fire TV</p>
+            <p>Kindle E-Readers & eBooks</p>
+            <p>Audible Audiobooks</p>
+            <p>Amazon Prime Video</p>
+            <p>Amazon Prime Music</p>
+            <hr>
+            <h4>Shop By Category</h4>
+            <p>Mobiles, Computers</p>
+            <p>TV, Appliances, Electronics</p>
+            <p>Men's Fashion</p>
+            <p>Women's Fashion</p>
+            <p>See All</p>
+            <hr>
+            <h4>Programs & Features</h4>
+            <p>Gift Cards & Mobile Recharges</p>
+            <p>Amazon Launchpad</p>
+            <p>Flight Tickets</p>
+            <p>Clearnace Store</p>
+            <hr>
+            <h4>Help & Settings</h4>
+            <p>Your Account</p>
+            <p>Customer Service</p>
+            <p>Sign in</p>
+        </div>
+        <div class="nav2allblank" onclick="navAllClose()"></div>
+    </div>
+    </section>
+    <!-- --------------------------------------------------------- -->
+
+
+
+    <script>
+        var uid = document.getElementById("tx")
+        var pwd = document.getElementById("pw")
+        localStorage.setItem("userid", "admin")
+        localStorage.setItem("userpass", "admin")
+        var useri = localStorage.getItem("userid")
+        var userp = localStorage.getItem("userpass")
+        var wrongg = document.getElementsByClassName("wrong")[0]
+        function fun1() {
+            if (uid.value === useri && pwd.value === userp) {
+                document.getElementsByClassName("layer")[0].style.display = "none"
+                var userId = document.getElementById("tx").value;
+                localStorage.setItem("idd", userId);
+                document.getElementById("userID").innerHTML = localStorage.getItem("idd");
+            }
+            else {
+                wrongg.style.display = "block"
+            }
+        }
+        let layerdisp = () => {
+            document.getElementsByClassName("layer")[0].style.display = "block"
+        }
+        // setTimeout(layerdisp,5000)
+
+        // -------------------------------------------
+       
+
+        let div1=document.getElementsByClassName('nav2all')[0]
+        let div2=document.getElementsByClassName('nav2allblank')[0]
+        let width=0
+        var state='close';
+        function navAll(){
+            document.getElementsByClassName("nav2allmain")[0].style.display="flex"
+            if(state=='close'){
+                div1.style.display='flex';
+                div2.style.display='block'
+                id= setInterval(openCon,0.2)              
+            }
+        }
+        function openCon(){
+            if(width>=22){
+                clearInterval(id);
+                return
+            }
+            width+=0.2
+            div1.style.width=width+'%'
+            div2.style.width=100-width+'%'    
+        }
+        function navAllClose(){
+            document.getElementsByClassName("nav2allmain")[0].style.display="none"
+            div1.style.display='none';
+            div2.style.display='none'
+            div1.style.width=0+"%"
+            div2.style.width=100+"%"
+            width=0
+        }
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        #cont{
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+        .getdata-con{
+            width: 250px;
+            height: 300px;
+            border: 1px solid green;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            position: relative;
+        }
+        .getdata{
+            width: 250px;
+            height: 250px;
+        }
+        .getdata img{
+            width: 100%;
+            height: 100%;
+        }
+        .item-wishlist{
+            position: absolute;
+            top: 20px;
+            right: 10px;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div id="cont"></div>
+
+    <script>
+        let products=[]
+        let con=document.getElementById("cont")
+        function getData(){
+            fetch('https://fakestoreapi.com/products')
+            .then(data=>data.json())
+            .then(data=>{
+                products=data;
+                displayPro(data)
+            })
+        }
+        getData()
+
+        function displayPro(data){
+            data.map((item)=>{
+                con.innerHTML+=`<div class="getdata-con"><i onclick="itemwish(this)" class="item-wishlist fa-regular fa-heart fa-2xl"></i> <div class="getdata"><img src=${item.image} /></div>${item.title}</div>`
+            })
+        }
+        function itemwish(e){
+            let clist=e.classList
+            if(clist.contains("fa-regular")){
+                clist.remove("fa-regular")
+                clist.add("fa-solid")
+                e.style.backgroundColor="red"
+            }
+            else{
+                clist.remove("fa-solid")
+                clist.add("fa-regular")
+                e.style.backgroundColor=""
+            }
+        }
+    </script>
+</body>
+</html>
